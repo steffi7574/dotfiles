@@ -1,0 +1,21 @@
+[user]
+	name = Stefanie Guenther
+	email = guenther@mathcces.rwth-aachen.de
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	st = status
+[core]
+	editor = vim
+[push]
+	default = simple
+
+[diff]
+  external=/home/sguenther/diff.py
+   
+#[diff]
+#	tool = /home/sguenther/diff.py
+#[merge]
+#	tool = vimdiff
