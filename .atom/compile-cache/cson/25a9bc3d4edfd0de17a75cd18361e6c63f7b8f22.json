@@ -1,0 +1,1 @@
+{"context-menu":{"atom-text-editor":[{"label":"Toggle latextools","command":"latextools:toggle"}]},"menu":[{"label":"Packages","submenu":[{"label":"latextools","submenu":[{"label":"Toggle","command":"latextools:toggle"}]}]}]}

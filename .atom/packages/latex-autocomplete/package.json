@@ -1,0 +1,47 @@
+{
+  "name": "latex-autocomplete",
+  "main": "./lib/latexautocomplete.js",
+  "version": "0.3.1",
+  "description": "An environment-closing autocompleter that tries to do its best",
+  "keywords": [
+    "LaTeX",
+    "autocompletion"
+  ],
+  "activationHooks": [
+    "language-latex:grammar-used"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evpok/latex-autocomplete.git"
+  },
+  "license": "WTFPL",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {},
+  "readme": "# LaTeX-autocomplete\n\nLaTeX environment autocompletion for [atom](http://atom.io).\n\n![Screenshot](https://cdn.rawgit.com/Evpok/latex-autocomplete/master/doc/shot.gif)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/evpok/latex-autocomplete/issues"
+  },
+  "homepage": "https://github.com/evpok/latex-autocomplete#readme",
+  "_id": "latex-autocomplete@0.3.1",
+  "_shasum": "36d8f19341775ad61ee30812f53dafb82d00a45b",
+  "_resolved": "file:../d-116028-7254-g9op57/package.tgz",
+  "_from": "../d-116028-7254-g9op57/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".js": [
+        "lib/completer.js",
+        "lib/latexautocomplete.js",
+        "lib/libcloser.js"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
