@@ -1,1 +1,0 @@
-{"atom-text-editor.vim-mode":{"ctrl-c":"core:copy"},"atom-text-editor":{"ctrl-b":"latex:build"},"body":{"ctrl-s":"core:save"},"atom-text-editor.vim-mode-plus:not(.insert-mode)":{"ctrl-d":"find-and-replace:select-next"}}
