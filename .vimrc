@@ -1,3 +1,6 @@
+" set the shell
+set shell=/bin/bash
+
 "general configuration
 set expandtab
 set tabstop=2
@@ -7,6 +10,7 @@ set shiftwidth=2
 syntax on
 colorscheme atomdark
 set background=dark
+
 
 " turn on relative line numbering
 set number
@@ -57,6 +61,7 @@ set smartcase
 ""Control
 set autoread    "vim loads modified file after external changes
 
+"" Colors for vimdiff
 highlight DiffAdd cterm=NONE ctermfg=white ctermbg=Green gui=NONE guifg=white guibg=Green
 highlight DiffDelete cterm=NONE ctermfg=white ctermbg=Red gui=NONE guifg=white guibg=Red
 highlight DiffChange cterm=NONE ctermfg=white ctermbg=Yellow gui=NONE guifg=white guibg=Yellow
@@ -79,6 +84,7 @@ map <Insert> :set paste<CR>i<CR><CR><Esc>k:.!xclip -o<CR>JxkJx:set nopaste<CR>
 if &diff
     set wrap
     colorscheme desert
+    syntax off
     set diffopt+=iwhite
 endif
 
