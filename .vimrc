@@ -3,8 +3,8 @@ set shell=/bin/bash
 
 "general configuration
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 
 " turn syntax highlighting on
 syntax on
@@ -62,10 +62,10 @@ set smartcase
 set autoread    "vim loads modified file after external changes
 
 "" Colors for vimdiff
-highlight DiffAdd cterm=NONE ctermfg=white ctermbg=Green gui=NONE guifg=white guibg=Green
-highlight DiffDelete cterm=NONE ctermfg=white ctermbg=Red gui=NONE guifg=white guibg=Red
-highlight DiffChange cterm=NONE ctermfg=white ctermbg=Yellow gui=NONE guifg=white guibg=Yellow
-highlight DiffText cterm=NONE ctermfg=white ctermbg=Magenta gui=NONE guifg=white guibg=Magenta
+"highlight DiffAdd cterm=NONE ctermfg=white ctermbg=Green gui=NONE guifg=white guibg=Green
+"highlight DiffDelete cterm=NONE ctermfg=white ctermbg=Red gui=NONE guifg=white guibg=Red
+"highlight DiffChange cterm=NONE ctermfg=white ctermbg=Yellow gui=NONE guifg=white guibg=Yellow
+"highlight DiffText cterm=NONE ctermfg=white ctermbg=Magenta gui=NONE guifg=white guibg=Magenta
 
 " spell checking and automatic wrapping at 72 columns for git commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -83,13 +83,14 @@ map <Insert> :set paste<CR>i<CR><CR><Esc>k:.!xclip -o<CR>JxkJx:set nopaste<CR>
 " VIMDIFF
 if &diff
     set wrap
-    colorscheme desert
-    syntax off
+    "colorscheme desert
+    "syntax off
     set diffopt+=iwhite
 endif
 
 
 " load plugins
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
@@ -139,3 +140,8 @@ map <leader>tn :tabnew<cr>
 map <leader>te :tabedit
 map <leader>tc :tabclose
 map <leader>tm :tabmove
+
+
+"Enable filetype plugin -> load filetype specific scripts stored in
+"~/.vim/ftpugin/<filetype>.vim
+filetype plugin on 
