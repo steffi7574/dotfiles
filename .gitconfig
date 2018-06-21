@@ -1,6 +1,6 @@
 [user]
 	name = Stefanie Guenther
-	email = guenther@mathcces.rwth-aachen.de
+	email = stefanie.guenther@scicomp.uni-kl.de
 [alias]
 	co = checkout
 	ci = commit
@@ -11,10 +11,19 @@
 	editor = vim
 [push]
 	default = simple
-
+[merge]
+    tool = meld
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [diff]
-  external=/home/sguenther/diff.py
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
    
+#[diff]
+#  external=/home/sguenther/diff.py
 #[diff]
 #	tool = /home/sguenther/diff.py
 #[merge]
