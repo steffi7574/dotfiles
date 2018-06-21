@@ -27,6 +27,16 @@ alias terminal="gnome-terminal"
 alias sublime3="/home/sguenther/Software/sublime_text_3/sublime_text"
 
 alias gitpp="git log --graph --simplify-by-decoration --pretty=format:'%d' --all"
-#alias mpicc="mpicc -no-multibyte-chars"
 
+# Go forward in Git commit hierarchy towards a particular commit
+# Usage: 
+#  > gitgofwd v1.2.7
+gitgofwd() {
+   git checkout $(git rev-list --topo-order HEAD.."$*" | tail -1)
+}
+# Go back in Git commit hierarchy
+alias gitgoback="git checkout HEAD~"
+
+
+alias diff=colordiff
 
