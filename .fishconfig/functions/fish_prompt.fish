@@ -6,7 +6,8 @@ function fish_prompt
         function _git_branch_name
             set -l branch (git symbolic-ref --quiet HEAD ^/dev/null)
             if set -q branch[1]
-                echo (string replace -r '^refs/heads/' '' $branch)
+		echo (git rev-parse --abbrev-ref HEAD)
+                #echo (string replace -r '^refs/heads/' '' $branch)
             else
                 echo (git rev-parse --short HEAD ^/dev/null)
             end
