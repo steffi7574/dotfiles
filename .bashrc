@@ -53,5 +53,3 @@ export ICECC_VERSION=~/Software/gcc7.3.1.tar.gz
 export ICECC_CARET_WORKAROUND=0
 export PATH=/usr/libexec/icecc/bin:$PATH
 
-# Load the fish shell
-fish
