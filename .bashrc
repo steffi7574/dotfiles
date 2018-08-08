@@ -27,6 +27,7 @@ export PYTHONPATH=$PYTHONPATH:$SU2_RUN
 alias c="clear"
 alias l="ls -lhAF"
 alias ll="ls -lhF"
+alias ll="ls -lhtr"
 alias diff=colordiff
 alias tapenade="/home/sguenther/Software/tapenade3.6/bin/tapenade"
 alias tecplot="/usr/local/tecplot360ex/bin/tec360"
