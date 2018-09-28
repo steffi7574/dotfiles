@@ -1,6 +1,3 @@
-" set the shell
-set shell=/bin/bash
-
 "general configuration
 set expandtab
 set tabstop=4
@@ -61,19 +58,11 @@ set smartcase
 ""Control
 set autoread    "vim loads modified file after external changes
 
-"" Colors for vimdiff
-"highlight DiffAdd cterm=NONE ctermfg=white ctermbg=Green gui=NONE guifg=white guibg=Green
-"highlight DiffDelete cterm=NONE ctermfg=white ctermbg=Red gui=NONE guifg=white guibg=Red
-"highlight DiffChange cterm=NONE ctermfg=white ctermbg=Yellow gui=NONE guifg=white guibg=Yellow
-"highlight DiffText cterm=NONE ctermfg=white ctermbg=Magenta gui=NONE guifg=white guibg=Magenta
-
 " spell checking and automatic wrapping at 72 columns for git commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-
 " set paste toggle -> key enters/leaves paste mode 
 set pastetoggle=<F10>
-
 
 " copy and paste to/from system clipboard
 vmap <C-c> :<Esc>`>a<CR><Esc>mx`<i<CR><Esc>my'xk$v'y!xclip -selection c<CR>u
