@@ -6,15 +6,16 @@ function fish_prompt
         function _git_branch_name
             set -l branch (git symbolic-ref --quiet HEAD ^/dev/null)
             if set -q branch[1]
-		echo (git rev-parse --abbrev-ref HEAD)
-                #echo (string replace -r '^refs/heads/' '' $branch)
+		#echo (git rev-parse --abbrev-ref HEAD)
+                echo (string replace -r '^refs/heads/' '' $branch)
             else
                 echo (git rev-parse --short HEAD ^/dev/null)
             end
         end
 
         function _is_git_dirty
-            echo (git status -s --ignore-submodules=dirty ^/dev/null)
+            #echo (git status -s --ignore-submodules=dirty ^/dev/null)
+            echo (git status -s -uno --ignore-submodules=dirty ^/dev/null)
         end
 
         function _is_git_repo

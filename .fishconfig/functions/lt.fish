@@ -1,3 +1,3 @@
 function lt
-	ls -lhAtr $argv
+	ls -lhtr $argv
 end
