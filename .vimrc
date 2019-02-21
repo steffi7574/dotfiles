@@ -58,6 +58,12 @@ set smartcase
 ""Control
 set autoread    "vim loads modified file after external changes
 
+"" Colors for vimdiff
+"highlight DiffAdd cterm=NONE ctermfg=white ctermbg=Green gui=NONE guifg=white guibg=Green
+"highlight DiffDelete cterm=NONE ctermfg=white ctermbg=Red gui=NONE guifg=white guibg=Red
+"highlight DiffChange cterm=NONE ctermfg=white ctermbg=Yellow gui=NONE guifg=white guibg=Yellow
+"highlight DiffText cterm=NONE ctermfg=white ctermbg=Magenta gui=NONE guifg=white guibg=Magenta
+
 " spell checking and automatic wrapping at 72 columns for git commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
