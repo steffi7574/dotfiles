@@ -1,0 +1,10 @@
+{
+    "window.zoomLevel": 0,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": true,
+    "editor.fontSize": 13,
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.activityBar.visible": true,
+    "latex-workshop.latex.autoBuild.run": "never",
+}
