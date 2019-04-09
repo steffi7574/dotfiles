@@ -1,6 +1,6 @@
 [user]
 	name = Stefanie Guenther
-	email = stefanie.guenther@scicomp.uni-kl.de
+	email = guenther5@llnl.gov
 [alias]
 	co = checkout
 	ci = commit
@@ -21,6 +21,11 @@
     prompt = false
 [difftool "meld"]
     cmd = meld "$LOCAL" "$REMOTE"
+[color] 
+    status      = auto
+    diff        = auto 
+    branch      = auto 
+    interactive = auto
    
 #[diff]
 #  external=/home/sguenther/diff.py
