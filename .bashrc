@@ -35,8 +35,23 @@ alias terminal="gnome-terminal"
 alias sublime3="/home/sguenther/Software/sublime_text_3/sublime_text"
 alias gitkraken="/opt/GitKraken/gitkraken/gitkraken"
 
-# Git 
+# Set PATH variable for locally installed software
+export PATH=/home/guenther5/Software/VSCode/VSCode-linux-x64/:$PATH
 
+# Spack
+export SPACK_ROOT=/home/guenther5/Software/spack
+export PATH=$SPACK_ROOT:$PATH
+. $SPACK_ROOT/share/spack/setup-env.sh
+
+spack load fish
+spack load tig
+spack load gcc
+spack load cmake
+
+
+## Git 
+
+# pretty git
 alias gitpp="git log --graph --simplify-by-decoration --pretty=format:'%d' --all"
 # Go forward in Git commit hierarchy towards a particular commit
 # Usage: 
