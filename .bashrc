@@ -15,38 +15,46 @@ module load mpi
 
 export CLICOLOR=1
 export PS1='\[\033[01;34m\] \w/\[\033[00;34m\]\[\033[01;32m\]> \[\033[00m\]'
-export TAPENADE_HOME="/home/sguenther/Software/tapenade3.6"
-export F77=gfortran
-
-export SU2_RUN="/home/sguenther/Numerics/SU2/bin"
-export SU2_HOME="/home/sguenther/Numerics/SU2"
-export PATH=$PATH:$SU2_RUN
-export PYTHONPATH=$PYTHONPATH:$SU2_RUN
-
 
 alias c="clear"
 alias l="ls -lhAF"
 alias lt="ls -lhAtr"
 alias ll="ls -lhF"
 alias diff=colordiff
-alias tapenade="/home/sguenther/Software/tapenade3.6/bin/tapenade"
-alias tecplot="/usr/local/tecplot360ex/bin/tec360"
-alias terminal="gnome-terminal"
-alias sublime3="/home/sguenther/Software/sublime_text_3/sublime_text"
-alias gitkraken="/opt/GitKraken/gitkraken/gitkraken"
 
-# Set PATH variable for locally installed software
-export PATH=/home/guenther5/Software/VSCode/VSCode-linux-x64/:$PATH
 
-# Spack
-export SPACK_ROOT=/home/guenther5/Software/spack
-export PATH=$SPACK_ROOT:$PATH
-. $SPACK_ROOT/share/spack/setup-env.sh
+# Set some variables for local software 
+export SPACK_DIR=$HOME/Software/spack
+export BOOST_DIR=$HOME/Software/boost_1_69_0
+export JULIA_DIR=$HOME/Software/julia-1.1.0
+export BRAID_DIR=$HOME/Numerics/xbraid/braid
+export MELD_DIR=$HOME/Software/meld-3.20.1/bin
+export PETSC_DIR=$HOME/Software/petsc
+export PETSC_ARCH=linux-gnu-c-debug
+export PARADAE_DIR=$HOME/Numerics/paradae
+export SUITESPARSE_DIR=$HOME/Software/SuiteSparse
 
-spack load fish
-spack load tig
-spack load gcc
-spack load cmake
+# Add to PATH variable
+export PATH=$HOME/bin:$BRAID_DIR:$MELD_DIR/bin:$JULIA_DIR/bin:$SPACK_DIR:$PATH
+
+# Add to LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PETSC_DIR/$PETSC_ARCH/lib:$BRAID_DIR:$BOOST_DIR/stage/lib:$PARADAE_DIR/lib:$SUITESPARSE_DIR/lib
+
+# Spack: set environment variables and load packages
+#. $SPACK_DIR/share/spack/setup-env.sh
+#spack load fish
+#spack load tig
+
+
+
+
+## Spack
+#. $SPACK_DIR/share/spack/setup-env.sh
+#
+#spack load fish
+#spack load tig
+#spack load gcc
+#spack load cmake
 
 
 ## Git 
@@ -61,11 +69,4 @@ gitgofwd() {
 }
 # Go back in Git commit hierarchy
 alias gitgoback="git checkout HEAD~"
-
-
-
-# Compile on SciComp Server
-export ICECC_VERSION=~/Software/gcc7.3.1.tar.gz
-export ICECC_CARET_WORKAROUND=0
-export PATH=/usr/libexec/icecc/bin:$PATH
 

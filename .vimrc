@@ -11,7 +11,7 @@ set background=dark
 
 " turn on relative line numbering
 set number
-set relativenumber
+"set relativenumber
 " highlight matching braces
 set showmatch
 "do not show mode (INSERT VISUAL etc) in last line
