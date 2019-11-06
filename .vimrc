@@ -84,59 +84,59 @@ if &diff
 endif
 
 
-" load plugins
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-call plug#begin('~/.vim/plugged')
-  Plug 'tpope/vim-fugitive'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'scrooloose/nerdtree'
-call plug#end()
-
-let mapleader=","
-
-""AIRLINE
-set laststatus=2
-let g:airline#extensions#syntastic#enabled=1
-let g:airline_extensions=['tabline', 'branch']
-let g:airline_theme='sol'
-"Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-"Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-"airline font
-let g:airline_powerline_fonts = 1
-
-""NERDTREE
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nf :NERDTreeFind<cr>
-let NERDTreeWinSize = 30
-
-
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-" Source: https://github.com/scrooloose/nerdtree/issues/21
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
-" Close NERDTree if it is the last buffer open
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-
-"Tab configuration
-map <leader>tn :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose
-map <leader>tm :tabmove
-
-
-"Enable filetype plugin -> load filetype specific scripts stored in
-"~/.vim/ftpugin/<filetype>.vim
-filetype plugin on 
+"" load plugins
+"" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"call plug#begin('~/.vim/plugged')
+"  Plug 'tpope/vim-fugitive'
+"  Plug 'vim-airline/vim-airline'
+"  Plug 'vim-airline/vim-airline-themes'
+"  Plug 'scrooloose/nerdtree'
+"call plug#end()
+"
+"let mapleader=","
+"
+"""AIRLINE
+"set laststatus=2
+"let g:airline#extensions#syntastic#enabled=1
+"let g:airline_extensions=['tabline', 'branch']
+"let g:airline_theme='sol'
+""Enable the list of buffers
+"let g:airline#extensions#tabline#enabled = 1
+""Show just the filename
+"let g:airline#extensions#tabline#fnamemod = ':t'
+""airline font
+"let g:airline_powerline_fonts = 1
+"
+"""NERDTREE
+"map <leader>nn :NERDTreeToggle<cr>
+"map <leader>nf :NERDTreeFind<cr>
+"let NERDTreeWinSize = 30
+"
+"
+"" Close all open buffers on entering a window if the only
+"" buffer that's left is the NERDTree buffer
+"" Source: https://github.com/scrooloose/nerdtree/issues/21
+"function! s:CloseIfOnlyNerdTreeLeft()
+"  if exists("t:NERDTreeBufName")
+"    if bufwinnr(t:NERDTreeBufName) != -1
+"      if winnr("$") == 1
+"        q
+"      endif
+"    endif
+"  endif
+"endfunction
+"
+"" Close NERDTree if it is the last buffer open
+"autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+"
+"
+""Tab configuration
+"map <leader>tn :tabnew<cr>
+"map <leader>te :tabedit
+"map <leader>tc :tabclose
+"map <leader>tm :tabmove
+"
+"
+""Enable filetype plugin -> load filetype specific scripts stored in
+""~/.vim/ftpugin/<filetype>.vim
+"filetype plugin on 
