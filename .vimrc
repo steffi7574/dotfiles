@@ -4,7 +4,6 @@ if &term =~ "ansi"
 endif
 
 
-
 "general configuration
 set expandtab
 set tabstop=4
@@ -12,8 +11,9 @@ set shiftwidth=4
 
 " turn syntax highlighting on
 syntax on
-colorscheme atomdark
+"colorscheme atomdark
 set background=dark
+colorscheme desert
 
 
 " turn on relative line numbering
@@ -70,6 +70,10 @@ set autoread    "vim loads modified file after external changes
 "highlight DiffDelete cterm=NONE ctermfg=white ctermbg=Red gui=NONE guifg=white guibg=Red
 "highlight DiffChange cterm=NONE ctermfg=white ctermbg=Yellow gui=NONE guifg=white guibg=Yellow
 "highlight DiffText cterm=NONE ctermfg=white ctermbg=Magenta gui=NONE guifg=white guibg=Magenta
+highlight DiffAdd    cterm=bold ctermfg=Black ctermbg=Green gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=Black ctermbg=Yellow gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=Black ctermbg=Red gui=none guifg=black guibg=Red
 
 " spell checking and automatic wrapping at 72 columns for git commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -82,68 +86,70 @@ vmap <C-c> :<Esc>`>a<CR><Esc>mx`<i<CR><Esc>my'xk$v'y!xclip -selection c<CR>u
 map <Insert> :set paste<CR>i<CR><CR><Esc>k:.!xclip -o<CR>JxkJx:set nopaste<CR> 
 
 
-" VIMDIFF
-if &diff
-    set wrap
-    "colorscheme desert
-    "syntax off
-    set diffopt+=iwhite
-endif
+"" VIMDIFF
+"if &diff
+"     "set wrap
+"     colorscheme desert
+"     syntax off
+"     "set diffopt-=internal
+"     "set diffopt+=iwhite
+"endif
 
 
-"" load plugins
-"" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"call plug#begin('~/.vim/plugged')
-"  Plug 'tpope/vim-fugitive'
-"  Plug 'vim-airline/vim-airline'
-"  Plug 'vim-airline/vim-airline-themes'
-"  Plug 'scrooloose/nerdtree'
-"call plug#end()
-"
-"let mapleader=","
-"
-"""AIRLINE
-"set laststatus=2
-"let g:airline#extensions#syntastic#enabled=1
-"let g:airline_extensions=['tabline', 'branch']
-"let g:airline_theme='sol'
-""Enable the list of buffers
-"let g:airline#extensions#tabline#enabled = 1
-""Show just the filename
-"let g:airline#extensions#tabline#fnamemod = ':t'
-""airline font
-"let g:airline_powerline_fonts = 1
-"
-"""NERDTREE
-"map <leader>nn :NERDTreeToggle<cr>
-"map <leader>nf :NERDTreeFind<cr>
-"let NERDTreeWinSize = 30
-"
-"
-"" Close all open buffers on entering a window if the only
-"" buffer that's left is the NERDTree buffer
-"" Source: https://github.com/scrooloose/nerdtree/issues/21
-"function! s:CloseIfOnlyNerdTreeLeft()
-"  if exists("t:NERDTreeBufName")
-"    if bufwinnr(t:NERDTreeBufName) != -1
-"      if winnr("$") == 1
-"        q
-"      endif
-"    endif
-"  endif
-"endfunction
-"
-"" Close NERDTree if it is the last buffer open
-"autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-"
-"
-""Tab configuration
-"map <leader>tn :tabnew<cr>
-"map <leader>te :tabedit
-"map <leader>tc :tabclose
-"map <leader>tm :tabmove
-"
-"
-""Enable filetype plugin -> load filetype specific scripts stored in
-""~/.vim/ftpugin/<filetype>.vim
-"filetype plugin on 
+" load plugins
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.vim/plugged')
+  Plug 'tpope/vim-fugitive'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'scrooloose/nerdtree'
+"  Plug 'dense-analysis/ale'
+call plug#end()
+
+let mapleader=","
+
+""AIRLINE
+set laststatus=2
+let g:airline#extensions#syntastic#enabled=1
+let g:airline_extensions=['tabline', 'branch']
+let g:airline_theme='sol'
+"Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+"Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+"airline font
+let g:airline_powerline_fonts = 1
+
+""NERDTREE
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nf :NERDTreeFind<cr>
+let NERDTreeWinSize = 30
+let NERDTreeShowHidden=1
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+" Source: https://github.com/scrooloose/nerdtree/issues/21
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+" Close NERDTree if it is the last buffer open
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+
+"Tab configuration
+map <leader>tn :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose
+map <leader>tm :tabmove
+
+
+"Enable filetype plugin -> load filetype specific scripts stored in
+"~/.vim/ftpugin/<filetype>.vim
+filetype plugin on 
